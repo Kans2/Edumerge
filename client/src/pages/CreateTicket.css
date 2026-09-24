@@ -1,0 +1,195 @@
+/* ── Create Ticket Page ── */
+.create-ticket {
+  max-width: 860px;
+}
+
+.create-ticket__header {
+  margin-bottom: var(--space-8);
+}
+
+.create-ticket__header h2 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.create-ticket__header p {
+  color: var(--text-secondary);
+  font-size: var(--font-base);
+}
+
+.create-ticket__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ── Form Section ── */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.form-section__label {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input--full {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  padding-left: var(--space-4);
+}
+
+.form-hint {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+/* ── Category Grid ── */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3);
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.category-card:hover {
+  border-color: var(--primary-400);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+
+.category-card--active {
+  border-color: var(--primary-500);
+  background: rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.category-card__icon {
+  font-size: 1.75rem;
+}
+
+.category-card__name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.category-card__desc {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ── Priority Grid ── */
+.priority-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.priority-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.priority-card:hover {
+  border-color: var(--priority-color);
+}
+
+.priority-card--active {
+  border-color: var(--priority-color);
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--priority-color) 20%, transparent);
+}
+
+.priority-card__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--priority-color);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--priority-color) 40%, transparent);
+}
+
+.priority-card__name {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.priority-card__desc {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  display: block;
+}
+
+/* ── Actions ── */
+.create-ticket__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-secondary {
+  padding: var(--space-3) var(--space-6);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: var(--font-base);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.btn-primary--lg {
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--font-base);
+}
+
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .priority-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .create-ticket__actions {
+    flex-direction: column;
+  }
+}

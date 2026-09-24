@@ -1,0 +1,32 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout__main {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition-base);
+}
+
+.layout--collapsed .layout__main {
+  margin-left: var(--sidebar-collapsed);
+}
+
+.layout--collapsed .navbar {
+  left: var(--sidebar-collapsed);
+}
+
+.layout__content {
+  padding: calc(var(--navbar-height) + var(--space-8)) var(--space-8) var(--space-8);
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .layout__main {
+    margin-left: 0;
+  }
+  .layout__content {
+    padding: calc(var(--navbar-height) + var(--space-4)) var(--space-4) var(--space-4);
+  }
+}
